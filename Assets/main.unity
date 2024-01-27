@@ -123,8 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
-<<<<<<< Updated upstream
-=======
 --- !u!1001 &16880626
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -295,7 +293,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 14
   m_CollisionDetection: 0
->>>>>>> Stashed changes
 --- !u!1 &167315823 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 4333fca008ced5040aa2d93afc233c32, type: 3}
@@ -808,10 +805,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 737894117}
-<<<<<<< Updated upstream
-  - {fileID: 167315826}
-=======
->>>>>>> Stashed changes
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 1.984, y: 0, z: 0}
 --- !u!1001 &1553915427
