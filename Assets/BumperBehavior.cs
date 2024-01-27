@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class BumperBehavior : MonoBehaviour
 {
+    public KeyCode arrowKey = KeyCode.RightArrow;
     private HingeJoint _hingeJoint;
 
     // Start is called before the first frame update
@@ -13,7 +14,7 @@ public class BumperBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.RightArrow))
+        if (Input.GetKey(arrowKey))
         {
             _hingeJoint.useMotor = true;
         }
