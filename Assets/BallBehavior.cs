@@ -19,17 +19,25 @@ public class BallBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKey(KeyCode.UpArrow))
+        {
+            ResetPosition();
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.collider.tag == "EndsGame")
         {
-            rb.position = startPosition;
-            rb.rotation = startRotation;
-            rb.velocity = Vector3.zero;
-            rb.angularVelocity = Vector3.zero;
+            ResetPosition();
         }
+    }
+
+    private void ResetPosition()
+    {
+        rb.position = startPosition;
+        rb.rotation = startRotation;
+        rb.velocity = Vector3.zero;
+        rb.angularVelocity = Vector3.zero;
     }
 }
