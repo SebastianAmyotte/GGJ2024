@@ -1,27 +1,28 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class BumperBehavior : MonoBehaviour
-{
-    public KeyCode arrowKey = KeyCode.RightArrow;
-    private HingeJoint _hingeJoint;
-
-    // Start is called before the first frame update
+public class BumperBehavior : MonoBehaviour {
+    private HingeJoint[] hinges;
     void Start()
     {
-        _hingeJoint = GetComponent<HingeJoint>();
+        Collider[] bumpers = GetComponentsInChildren<BoxCollider>();
+        hinges = GetComponentsInChildren<HingeJoint>();
+        MeshCollider mesh = GetComponent<MeshCollider>();
+        Physics.IgnoreCollision(bumpers[0], bumpers[1]);
+        Physics.IgnoreCollision(mesh, bumpers[0]);
+        Physics.IgnoreCollision(mesh, bumpers[1]);
     }
-
-    // Update is called once per frame
-    void Update()
+    private void OnCollisionEnter(Collision collision)
     {
-        if (Input.GetKey(arrowKey))
-        {
-            _hingeJoint.useMotor = true;
-        }
-        else
-        {
-            _hingeJoint.useMotor = false;
-        }
+        hinges[0].useMotor = true;
+        hinges[1].useMotor = true;
     }
 
+    private void OnCollisionExit(Collision collision)
+    {
+        hinges[0].useMotor = false;
+        hinges[1].useMotor = false;
+    }
 }
+
